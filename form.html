@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form page</title>
+  <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+
+
+  <div class="visme_d" data-title="Untitled Project" data-url="0174jmg6-untitled-project?fullPage=true" data-domain="forms" data-full-page="true" data-min-height="100vh" data-form-id="79734"></div>
+  <script src="https://static-bundles.visme.co/forms/vismeforms-embed.js"></script>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzsbk2gJrk9kKtncEN0cuRQ9u3_CAwFYdeIO4pnYc-Ap4ZCX0FYNtKTsnj2znoSes2RlA/exec'
+    const form = document.forms['google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+
+</html>
+
+
